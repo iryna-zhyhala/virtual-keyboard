@@ -1,0 +1,32 @@
+html {
+    box-sizing: border-box;
+}
+
+#keyboard {
+    width: 750px;
+    height: 248px;
+    margin: 0 auto;
+    padding: 5px;
+    background: #888888;
+    border: 3px solid #222222;
+    border-radius: 5px;
+}
+
+.key {
+    width: 36px;
+    height: 36px;
+    border: 1px solid black;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    background-color: #444444;;
+    float: left;
+    padding: 3px;
+    margin: 3px;
+}
+
+.clearfix {
+    display: block;
+    width: 100%;
+    clear: both;
+}
