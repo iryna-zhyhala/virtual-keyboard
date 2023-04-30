@@ -2,6 +2,21 @@ html {
     box-sizing: border-box;
 }
 
+.titles {
+    font-size: 30px;
+    color: aquamarine;
+}
+
+.textarea {
+    display: block;
+    width: 700px;
+    height: 200px;
+    margin: 10px auto 10px;
+    padding: 10px;
+    font-size: 18px;
+    color: #444444;
+}
+
 #keyboard {
     width: 750px;
     height: 248px;
