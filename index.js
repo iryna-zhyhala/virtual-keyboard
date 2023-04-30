@@ -9,12 +9,32 @@ let keyboard = [96, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 45, 61, 8, 9, 81, 87
 function init() {
     let out = '';
     for (let i = 0; i < keyboard.length; i++) {
-        if (i == 14 || i == 29 || i == 42 || i == 55) {
+        if (i === 14 || i === 29 || i === 42 || i === 55) {
             out += '<div class="clearfix"></div>';
         }
-        out += '<div class = "key">' + String.fromCharCode(keyboard[i]) + '</div>';
+        out += '<div class = "key" data="' + keyboard[i] + '" >' + String.fromCharCode(keyboard[i]) + '</div>';
     }
     document.querySelector('#keyboard').innerHTML = out;
 }
 
 init();
+
+document.onkeydown = function(event) {
+    console.log(event.code);
+    console.log(event.keyCode);
+    document.querySelectorAll('#keyboard .key').forEach(function (element) {
+        element.classList.remove('active');
+    })
+    document.querySelector('#keyboard .key[data="'+ event.keyCode +'"]').classList.add('active')
+}
+
+document.querySelectorAll('#keyboard .key').forEach(function (element) {
+    element.onclick = function(event) {
+        document.querySelectorAll('#keyboard .key').forEach(function (element) {
+            element.classList.remove('active');
+        });
+        let code = this.getAttribute('data');
+        this.classList.add('active');
+        console.log(code);
+    }
+})
